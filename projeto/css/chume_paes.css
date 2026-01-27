@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+    font-family: roboto, sans-serif;
+}
+
+body {
+    background-color: #ffbc65;
+}
+
+header {
+    background-color: white;
+    font-size: 1.5em;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+header div {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 40%;
+}
+
+header nav{
+    margin-left: auto;
+    width: 40%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a:hover {
+    color: white;
+}
+
+.chume_paes_logo_header {
+    width: 100px;
+    height: auto;
+}
+
+.banner {
+    background-image: url('../img/balcao-de-padaria.webp');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: auto;
+    margin-bottom: 2rem;
+}
+
+.banner_overlay {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    background-color: rgba(255, 138, 88, 0.4);
+    z-index: 1;
+}
+
+.text_banner {
+    position: relative;
+    color: white;
+    font-size: 4rem;
+    text-align: center;
+    padding-top: 200px;
+    z-index: 2;
+}
