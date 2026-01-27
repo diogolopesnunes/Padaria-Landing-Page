@@ -1,82 +1,274 @@
+:root {
+    --principal-laranja: #ffbc65;
+    --principal-laranja-claro: #ffd89b;
+    --principal-laranja-escuro: #ff8730;
+    --principal-laranja-escuro-escuro: #c95000;
+    --cor-texto: #333;
+    --cor-branca: #fff;
+    --cor-overlay: rgba(255, 138, 88, 0.5);
+    --font-family: 'Roboto', sans-serif;
+    --transition: all 0.3s ease;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: black;
-    font-family: roboto, sans-serif;
+    text-decoration: none;
+}
+a:visited {
+    color: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #ffbc65;
-}
-
-header {
     background-color: white;
-    font-size: 1.5em;
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+    color: var(--cor-texto);
+    font-family: var(--font-family);
+    line-height: 1.6;
 }
 
-header div {
+/* HEADER */
+header.header {
+    background-color: var(--cor-branca);
     padding: 1rem 2rem;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header nav {
+    display: flex;
+    gap: 2rem;
     justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    width: 40%;
+    width: 60%;
 }
 
-header nav{
-    margin-left: auto;
-    width: 40%;
-    padding: 1rem 2rem;
+.logo {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    transition: var(--transition);
 }
 
-header h1 {
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-header a {
-    text-decoration: none;
-}
-
-header a:hover {
-    color: white;
+.logo:hover {
+    transform: scale(1.05);
 }
 
 .chume_paes_logo_header {
-    width: 100px;
+    width: 80px;
     height: auto;
+    display: block;
 }
 
+.titulo_header,
+.link_header,
+.link_header:visited{
+    text-decoration: none;
+    color: var(--principal-laranja-escuro);
+    font-weight: 500;
+    font-size: 1.25rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.titulo_header:hover,
+.link_header:hover,
+.link_header:hover:visited:hover {
+    color: var(--principal-laranja-escuro-escuro);
+}
+
+.link_header::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--principal-laranja-escuro-escuro);
+    transition: width 0.3s ease;
+}
+
+.link_header:hover::after {
+    width: 100%;
+}
+
+/* BANNER */
 .banner {
+    position: relative;
     background-image: url('../img/balcao-de-padaria.webp');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     height: 500px;
-    width: auto;
-    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.banner_overlay {
+.banner::before {
+    content: '';
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 500px;
-    background-color: rgba(255, 138, 88, 0.4);
+    height: 100%;
+    background-color: var(--cor-overlay);
     z-index: 1;
 }
 
 .text_banner {
     position: relative;
-    color: white;
+    z-index: 2;
+    color: var(--cor-branca);
     font-size: 4rem;
     text-align: center;
-    padding-top: 200px;
-    z-index: 2;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 0.8s ease;
+}
+
+/* Produtos */
+div.container {
+    margin: 20px;
+}
+
+.produtos {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 2rem;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.produtos::-webkit-scrollbar {
+    height: 14px;
+}
+
+.produtos::-webkit-scrollbar-track {
+    background: var(--principal-laranja-claro);
+    border-radius: 10px;
+}
+
+.produtos::-webkit-scrollbar-thumb {
+    background: var(--principal-laranja-escuro);
+    border-radius: 15px;
+}
+
+.produtos::-webkit-scrollbar-thumb:hover {
+    background: var(--principal-laranja-escuro-escuro);
+}
+
+.produtos:-webkit-scrollbar-button {
+    display: none;
+}
+
+.produtos::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+
+.produto_card {
+    flex: 0 0 280px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+}
+
+.produto_card:hover {
+    transform: translateY(-8px);
+}
+
+.produto_imagem {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px 8px 0 0;
+}
+
+.produto_nome {
+    font-size: 1.1rem;
+    padding: 1rem 1rem 0.5rem;
+    color: var(--principal-laranja-escuro);
+    font-weight: 600;
+}
+
+.produto_descricao {
+    padding: 0 1rem;
+    color: #666;
+    font-size: 0.9rem;
+    flex: 1;
+}
+
+.produto_preco {
+    display: block;
+    padding: 1rem;
+    font-size: 1.25rem;
+    color: var(--principal-laranja-escuro-escuro);
+    font-weight: 600;
+}
+
+/* Sobre Nós */
+
+
+
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    header.header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .titulo_header,
+    .link_header {
+        font-size: 0.9rem;
+    }
+
+    .banner {
+        height: 300px;
+        background-attachment: scroll;
+    }
+
+    .text_banner {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .chume_paes_logo_header {
+        width: 60px;
+    }
+
+    .text_banner {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
 }
