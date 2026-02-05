@@ -13,7 +13,7 @@
         <nav class="nav_header">
             <a class="link_header" href="#Produtos">Nossos Produtos</a>
             <a class="link_header" href="#SobreNos">Sobre Nós</a>
-            <a class="link_header" href="#OndeComprar">Loja Fisicamente</a>
+            <a class="link_header" href="#OndeComprar">Loja Física</a>
         </nav>
     </header>
 
@@ -22,7 +22,7 @@
     </section>
 
     <section class="produtos_section" id="Produtos">
-        <div class="container">
+        <div >
             <h2 class="secao_titulo">Nossos Produtos</h2>
             <p class="secao_descricao">Confira nossa deliciosa variedade de pães frescos</p>
                 
@@ -64,55 +64,33 @@
 
                 <a href="" class="produto_card">
                     <img src="img/bolo-chocolate.png" alt="Bolo de Chocolate" class="produto_imagem">
-                    <h3 class="produto_nome">Bolo de Chocolate</h3>
-                    <p class="produto_descricao">Molhado e saboroso</p>
+                    <h3 class="produto_nome">Fatia de Bolo de Chocolate</h3>
+                    <p class="produto_descricao">Ganulado e cobertura de chocolate</p>
                     <span class="produto_preco">R$ 12,00</span>
-                </a>
-
-                <a href="" class="produto_card">
-                    <img src="img/broa.png" alt="Broa" class="produto_imagem">
-                    <h3 class="produto_nome">Broa</h3>
-                    <p class="produto_descricao">Tradicional e nutritiva</p>
-                    <span class="produto_preco">R$ 3,50</span>
-                </a>
-
-                <a href="" class="produto_card">
-                    <img src="img/sonho.png" alt="Sonho" class="produto_imagem">
-                    <h3 class="produto_nome">Sonho</h3>
-                    <p class="produto_descricao">Doce e fofinho</p>
-                    <span class="produto_preco">R$ 4,00</span>
-                </a>
-
-                <a href="" class="produto_card">
-                    <img src="img/rosca-doce.png" alt="Rosca Doce" class="produto_imagem">
-                    <h3 class="produto_nome">Rosca Doce</h3>
-                    <p class="produto_descricao">Perfeita para lanches</p>
-                    <span class="produto_preco">R$ 8,50</span>
                 </a>
         </div>
     </section>
 
     <section class="sobre_nos" id="SobreNos">
-        <div class="container">
+        <div >
             <h2 class="secao_titulo">Sobre Nós</h2>
             
             <div class="sobre_conteudo">
                 <div class="sobre_texto">
                     <p>A Chume Pães é uma padaria tradicional com mais de 20 anos de experiência em fazer pães frescos e deliciosos.</p>
                     <p>Utilizamos ingredientes de primeira qualidade e técnicas artesanais para garantir o melhor sabor em cada produto.</p>
-                    <p>Nosso compromisso é com a qualidade, higiene e satisfação dos nossos clientes.</p>
                 </div>
                 
-                <div class="sobre_features">
-                    <div class="feature">
+                <div class="sobre_caracteristicas">
+                    <div class="feature card-sobre">
                         <h3>✓ Ingredientes Premium</h3>
                         <p>Selecionados com cuidado</p>
                     </div>
-                    <div class="feature">
-                        <h3>✓ Feito Fresco</h3>
-                        <p>Diariamente pela manhã</p>
+                    <div class="feature card-sobre">
+                        <h3>✓ Pães Artesanais</h3>
+                        <p>Feitos com técnicas tradicionais</p>
                     </div>
-                    <div class="feature">
+                    <div class="feature card-sobre">
                         <h3>✓ Atendimento Excelente</h3>
                         <p>Sempre com um sorriso</p>
                     </div>
@@ -123,21 +101,21 @@
 
     <!-- SEÇÃO ONDE COMPRAR -->
     <section class="onde_comprar" id="OndeComprar">
-        <div class="container">
-            <h2 class="secao_titulo">Loja Fisicamente</h2>
+        <div>
+            <h2 class="secao_titulo">Loja Física</h2>
             
             <div class="lojas_grid">
                 <div class="loja_card">
                     <h3>Loja Centro</h3>
                     <p><strong>Endereço:</strong> Rua Resenha, 123 - Centro</p>
-                    <p><strong>Telefone:</strong> (18) 9999-9999</p>
+                    <p><strong>Telefone:</strong> (18) 6741-6912</p>
                     <p><strong>Horário:</strong> Seg-Sex: 6h às 19h | Sab: 6h às 14h</p>
                 </div>
 
                 <div class="loja_card">
                     <h3>Loja Zona Sul</h3>
                     <p><strong>Endereço:</strong> Avenida Calopsita, 456 - Zona Sul</p>
-                    <p><strong>Telefone:</strong> (18) 8888-8888</p>
+                    <p><strong>Telefone:</strong> (18) 1234-5678</p>
                     <p><strong>Horário:</strong> Seg-Sex: 6h às 20h | Sab: 6h às 15h</p>
                 </div>
             </div>
@@ -146,31 +124,11 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="container">
+        <div >
             <p>&copy; 2026 Chume Pães. Todos os direitos reservados.</p>
-            <p>Feito com ❤️ para os amantes de pão</p>
         </div>
     </footer>
 
-    <script>
-        const produtosContainer = document.getElementById('produtosContainer');
-        const scrollPrevBtn = document.getElementById('scrollPrev');
-        const scrollNextBtn = document.getElementById('scrollNext');
-
-        scrollPrevBtn.addEventListener('click', () => {
-            produtosContainer.scrollBy({
-                left: -350,
-                behavior: 'smooth'
-            });
-        });
-
-        scrollNextBtn.addEventListener('click', () => {
-            produtosContainer.scrollBy({
-                left: 350,
-                behavior: 'smooth'
-            });
-        });
-    </script>
 
 </body>
 </html>
